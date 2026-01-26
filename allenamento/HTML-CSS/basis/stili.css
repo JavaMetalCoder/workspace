@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+#container {
+  width: 1000px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border: 5px black solid;
+}
+
+#boxUno {
+  flex-basis: 150px;
+  flex-grow: 0;
+  border: 3px red solid;
+
+  /*
+  flex: 1 0 150px;
+  */
+
+}
+
+#boxDue {
+  flex-basis: 200px;
+  flex-grow: 100;
+  border: 3px red solid;
+
+
+}
+
+#boxTre {
+  flex-basis: 200px;
+  flex-grow: 1;
+  border: 3px red solid;
+
+
+}
