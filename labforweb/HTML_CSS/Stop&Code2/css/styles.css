@@ -1,98 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Playfair Display", serif;
+}
+
+/* CONTENITORE */
+
+.contenitore {
+  margin: 0 auto;
+  width: 90%;
 }
 
 /*IMG*/
 
 img {
-  min-width: 100px;
-  max-width: 150px;
-  
+  min-width: 70px;
+  max-width: 300px;
 }
 
 /*HEADER*/
 
 header {
-  border: 2px solid green;
-  margin: 20px;
-
+  /* border: 2px solid green; */
 }
 
 .titolo {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-.titolo h1, h2 {
-  border: 2px solid blue;
-  display: block;
-  width: 50%;
+.titolo h1,
+.titolo h2 {
+  /* border: 2px solid blue; */
+  width: 40%;
   padding: 20px;
-  font-size: 3.5rem;
+  font-size: 5.5rem;
+  margin-bottom: 30px;
 }
 
 /*MAIN*/
 
 main {
-  border: 2px solid green;
-  margin: 20px;
+  /* border: 2px solid green; */
 }
 
 .foto_iniziali {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 40px;
   flex-wrap: wrap;
-  
-  
 }
 
-/*H3 ---> WHO I AM*/
+/*H3*/
 
-h3:nth-of-type(1) {
-  border: 2px solid aqua;
-  padding: 20px 30px;
+.subtitoli {
+  /* border: 2px solid aqua; */
+  padding: 20px 0;
 }
 
 .whoIam {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 50px;
-  
-  
-
 }
 
 .whoIam img {
-  border: 2px black solid;
+  /* border: 2px black solid; */
   max-width: 40%;
   height: auto;
 }
 
 .paragrafo {
-  border: 3px solid green;
+  /* border: 3px solid green; */
   display: flex;
   flex-direction: column;
   width: 35%;
-  margin: 30px 0;
-
+  margin-right: 70px;
 }
 
 .paragrafo p {
-  border: 3px solid orange;
-  font-size: 1.75rem;
-  
+  /* border: 3px solid orange; */
+  font-size: 2.75rem;
+  line-height: 2.7rem;
 }
 
+.portfolio {
+  /* border: solid 3px blue; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 30px 0;
+  gap: 10px;
+  font-size: 1.3rem;
+}
 
+.box {
+  /* border: 3px solid red; */
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+.box p {
+  padding-bottom: 10px;
+}
 
 /*FOOTER*/
 
+footer {
+  margin-bottom: 20px;
+}
+
+.footer {
+  /* border: 3px solid orange; */
+  display: flex;
+  justify-content: space-around;  
+}
+
+.footer-info {
+  /* border: solid 3px green; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.footer img {
+  max-width: none;
+  width: 40%;
+}
+
+.info {
+  padding: 0 20px 30px 50px;
+  /* border: 3px solid blue; */
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 40%;
+  margin-bottom: 50px;
+}
+
+.info h2 {
+  font-size: 3rem;
+}
+
+.info small {
+  font-size: .8rem;
+}
