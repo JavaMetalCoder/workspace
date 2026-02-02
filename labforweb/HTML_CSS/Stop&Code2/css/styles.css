@@ -17,8 +17,10 @@
 /*IMG*/
 
 img {
-  min-width: 70px;
-  max-width: 300px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 /*HEADER*/
@@ -39,7 +41,7 @@ header {
   /* border: 2px solid blue; */
   width: 40%;
   padding: 20px;
-  font-size: 5.5rem;
+  font-size: 2rem;
   margin-bottom: 30px;
 }
 
@@ -56,6 +58,11 @@ main {
   justify-content: space-between;
   margin-bottom: 40px;
   flex-wrap: wrap;
+  gap: 20px;
+}
+
+.foto_iniziali .img-box {
+  flex: 1;
 }
 
 /*H3*/
@@ -73,11 +80,6 @@ main {
   gap: 50px;
 }
 
-.whoIam img {
-  /* border: 2px black solid; */
-  max-width: 40%;
-  height: auto;
-}
 
 .paragrafo {
   /* border: 3px solid green; */
@@ -89,7 +91,7 @@ main {
 
 .paragrafo p {
   /* border: 3px solid orange; */
-  font-size: 2.75rem;
+  font-size: 1.8rem;
   line-height: 2.7rem;
 }
 
@@ -103,20 +105,24 @@ main {
   font-size: 1.3rem;
 }
 
-.box {
+.portfolio .box {
   /* border: 3px solid red; */
-  width: 33%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
   gap: 5px;
 }
 
-.box img {
-  width: 100%;
-  height: auto;
-  max-width: none;
+.portfolio .img-box {
+    width: 100%;
+    height: 300px; 
+    overflow: hidden;
+}
+
+.portfolio .img-box img {
+    width: 100%;
+    height: 100%; 
+    
 }
 
 .box p {
@@ -144,10 +150,7 @@ footer {
   width: 60%;
 }
 
-.footer img {
-  max-width: none;
-  width: 40%;
-}
+
 
 .info {
   padding: 0 20px 30px 50px;
@@ -157,12 +160,12 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  width: 40%;
+  flex: 1;
   margin-bottom: 50px;
 }
 
 .info h2 {
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
 
 .info small {
