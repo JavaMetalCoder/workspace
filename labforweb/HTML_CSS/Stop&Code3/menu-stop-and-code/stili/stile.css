@@ -1,0 +1,154 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+h1 {
+    width: 100%;
+    margin: 0 0 40px;
+    color: #fff;
+    background-color: #e8514e;
+    text-align: center;
+}
+
+/****************NAV-MENU*****************/
+
+nav {
+    /* border: solid 3px red; */
+    width: 100%;
+    background-color: #f7d100;
+}
+
+nav > .menu {
+    /* border: solid 3px green; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.menu > * {
+    /* border: solid 3px blue; */
+    flex: 1;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    display: block; 
+    text-decoration: none;
+    color: #333;
+}
+
+.menu li {
+    /* border: solid 4px black; */
+    position: relative;
+}
+
+.menu li:hover {
+    background-color: #2d57a4;
+}
+
+
+.menu li:hover > a {
+    color: white;
+}
+
+.sottoMenu {
+    /* estetica qui */
+    /* border: solid 4px green; */
+    background-color: #5071af;
+    
+
+    /* testo */
+    font-size: 0.9em;
+    
+
+    width: 100%; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    
+    /* Logica di visibilità */
+    visibility: hidden;
+    opacity: 0; /* Aggiunto per permettere la transizione */
+    transition: all 0.4s ease;
+    z-index: 1000;
+}
+
+.sottoMenu li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+}
+
+.sottoMenu li:hover {
+    background-color: #3b5a8f;
+}
+
+.sottoMenu li a {
+    color: white;
+}
+
+/* L'INTERRUTTORE */
+.menu li:hover > .sottoMenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.sottoMenu .sottoMenu {
+    top: 0;
+    left: 100%;
+}
+
+/****************BANNER******************/
+
+#banner {
+    /* border: solid 6px red; */
+    width: 100%;
+    margin-bottom: 50px;
+    
+}
+
+#banner img {
+    max-width: 100%;
+    display: block; /* Toglie lo spazio bianco sotto l'immagine */
+    object-fit: cover;
+}
+
+/****************ARTICLE**************/
+
+article {
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+}
+
+article h2 {
+    margin: 20px 0;
+}
+
+article p {
+    line-height: 2.6em;
+    font-size: 1.1em;
+}
+
+/***************FOOTER****************/
+
+footer {
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+    font-size: .6em;
+}
