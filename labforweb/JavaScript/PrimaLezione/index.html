@@ -8,7 +8,20 @@
     h1 {
       text-align: center;
     }
+
+    button {
+      display: block;
+      margin: 0 auto;
+    }
   </style>
+  
+</head>
+<body>
+  <h1 id="titolo">Ciao</h1>
+  <button id="cambia">Cambia</button>
+  <div id="cont">0</div>
+  
+  
   <script>
     console.log("Ciaoooouuu!!");
     
@@ -16,9 +29,26 @@
     console.log('Domenico');
     */
     // console.log("AO");
+
+    let x = document.getElementById("titolo");
+    x.innerHTML="A Bello";
+    x.style.color="red";
+
+    document.getElementById("titolo").innerHTML="ao";
+
+    
+
+    document.getElementById("cambia").onclick= function() {
+      x.innerHTML="Sera";
+      
+
+
+      
+    }
+
+    
+
+
   </script>
-</head>
-<body>
-  <h1>Ciao</h1>
 </body>
 </html>
