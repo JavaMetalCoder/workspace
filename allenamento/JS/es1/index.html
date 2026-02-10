@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Contatore Magico</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        h1 { font-size: 80px; margin: 20px; transition: color 0.3s; }
+        button { padding: 15px 30px; font-size: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1 id="numero">0</h1>
+    
+    <button id="bottone">Aumenta Livello</button>
+
+    <script>
+        // 1. LA MEMORIA (Global Scope)
+        // Creiamo la scatola fuori dalla funzione, così il numero non si resetta mai.
+        let contatore = 0;
+
+        // 2. IL RIFERIMENTO (Caching)
+        // Ci salviamo gli elementi HTML una volta sola per non affaticare il browser.
+        const display = document.getElementById("numero");
+        const tasto = document.getElementById("bottone");
+
+        // 3. L'EVENTO (Azione)
+        tasto.onclick = function() {
+            
+            // A. Incremento: Aggiungiamo 1 alla scatola
+            contatore++; // È come scrivere: contatore = contatore + 1;
+            
+            // B. Aggiornamento: Scriviamo il nuovo numero nell'HTML
+            display.innerHTML = contatore;
+
+            // C. La Logica (IF Statement)
+            // Se il contatore è ESATTAMENTE 10...
+            if (contatore == 10) {
+                display.style.color = "green";
+                display.innerHTML = "VITTORIA! 🎉"; // Un piccolo tocco extra
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Es2</title>
+  <style>
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="number">20</h1>
+  <button id="up">
+
+  </button>
+  <button id="down">
+
+  </button>
+
+
+  <script>
+    //prendiamo i tag e li inseriamo in variabili
+    const num = document.getElementById("number");
+    
+
+    const upBTN = document.getElementById("up");
+
+    const downBTN = document.getElementById("down");
+
+    upBTN.innerHTML="+";
+    downBTN.innerHTML="-";
+
+    let contatore = 20;
+
+    
+
+    upBTN.onclick = function() {
+      contatore++;
+      
+      num.innerHTML=contatore;
+
+      if(contatore > 25) {
+        num.style.color = "red";
+      } else {
+        num.style.color = "#000";
+      }
+      
+    }
+
+    downBTN.onclick = function() {
+      contatore--;
+      num.innerHTML=contatore;
+
+      if(contatore < 15) {
+        num.style.color = "blue";
+      } else {
+        num.style.color = "#000";
+      }
+
+    }
+
+
+
+
+  </script>
+  
+</body>
+</html>
