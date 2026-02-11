@@ -12,9 +12,17 @@ const btn = document.getElementById("inviaBtn");
 
 inviaBtn.onclick = function() {
   console.log("Cliccato");
+  
   let valoreInput = input.value;
+  if(valoreInput == "") {
+    window.alert("Inserisci un valore ");
+  } else {
 
-  titolo.innerText = valoreInput;
+    titolo.innerText = valoreInput;
+
+  }
+
+  
 
   /* RESET */
 
