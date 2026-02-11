@@ -12,7 +12,7 @@ const err = document.getElementById("errore");
 
 /*ESECUZIONE*/ 
 
-inviaBtn.onclick = function() {
+btn.onclick = function() {
   console.log("Cliccato");
   
   let valoreInput = input.value;
@@ -27,15 +27,16 @@ inviaBtn.onclick = function() {
     //err.innerText = "";
     input.classList.remove("erroreInput");
     titolo.innerText = valoreInput;
+    input.value = "";
+    input.focus();
     
 
   }
 
   
 
-  /* RESET */
+ 
 
-  input.value = "";
   
 
 }
@@ -44,6 +45,3 @@ inviaBtn.onclick = function() {
 
 
 
-let num = 18;
-
-console.log(num * 3.5);
