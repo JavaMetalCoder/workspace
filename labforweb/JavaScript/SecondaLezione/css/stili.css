@@ -36,3 +36,14 @@ button {
   cursor: pointer;
 
 }
+
+#errore {
+  font-weight: bold;
+  color: red;
+  margin-top: 30px;
+}
+
+.erroreInput {
+  border: red 3px solid;
+  background-color: #ffe6e6;
+}
