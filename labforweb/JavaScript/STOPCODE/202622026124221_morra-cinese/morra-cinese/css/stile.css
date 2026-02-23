@@ -130,6 +130,7 @@ button:hover{
 #gioco #scelta li:hover{
     opacity: 1;
     background-color: #006200;
+    
 }
 
 #gioco #scelta li:last-child{
