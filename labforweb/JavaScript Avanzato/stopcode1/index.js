@@ -93,9 +93,14 @@ const scarpe = [
 
 const card = document.querySelector("#cards-container");
 
-creaCards();
+const scarpeFiltrate = eliminaScarpeGrandi();
+creaCards(scarpeFiltrate);
 
-function creaCards() {
+function eliminaScarpeGrandi() {
+  return scarpe.filter(scarpa => Number(scarpa.taglia) <= 40);
+}
+
+function creaCards(scarpe) {
   const cards = scarpe
     .map(scarpa => `
       <div class="col-md-4 col-sm-6 mb-4">
