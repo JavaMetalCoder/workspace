@@ -375,8 +375,7 @@ function flipCard(event) {
 
 function getNextCards(card) {
   return card.nextCards.map(nextCard => {
-    return `<li>${nextCard.name}
-  ${nextCard.timeCost}</li>`;
+    return `<li>${nextCard.name} (${nextCard.timeCost})</li>`;
   }).join("");
 }
 
