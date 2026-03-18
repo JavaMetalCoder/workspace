@@ -1,0 +1,46 @@
+body{
+    background-image: url(immagini/logo-bianco.jpg);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-color: #43a047;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    margin: 30px auto;
+
+    max-width: 70%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#container2{
+    margin: 200px auto 30px;
+
+    max-width: 70%;
+    text-align: center;
+}
+
+h1{
+    width: 100%;
+    color: white;
+}
+
+.figura{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+}
+
+img{
+    max-width: 100%;
+}
+
+input{
+    width: 50%;
+    margin-top: 10px;
+}
+
