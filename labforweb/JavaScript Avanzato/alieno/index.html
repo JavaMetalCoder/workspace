@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alieno</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-dark text-white d-flex justify-content-center align-items-center vh-100">
+
+    <!-- Bottone apertura modal -->
+    <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#alienoModal">
+      Mostra Alieno
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="alienoModal" tabindex="-1" aria-labelledby="alienoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border border-success">
+
+          <div class="modal-header border-success">
+            <h5 class="modal-title text-success" id="alienoModalLabel">👽 Scheda Alieno</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+          </div>
+
+          <div class="modal-body" id="alienoBody">
+            <!-- Dati popolati da JS -->
+          </div>
+
+          <div class="modal-footer border-success">
+            <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Chiudi</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="alieno.js" defer></script>
+    
+  </body>
+</html>

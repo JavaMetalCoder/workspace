@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const search = document.querySelector(".search");
 
 const gameCards = [
     {
@@ -317,11 +318,11 @@ const gameCards = [
     }
   ];
   
-  createCards();
+  createCards(gameCards);
   init();
 
-function createCards() {
-  const cardsString = gameCards.map(card => {
+function createCards(cards) {
+  const cardsString = cards.map(card => {
     return `<div class="card">
               <div class="card__front">
                 <div class="card__header">
@@ -354,20 +355,31 @@ function createCards() {
 
 }
 
+function searchCards() {
+    const input = search.querySelector(".search__input");
+
+    let inputUser = input.value.trim().toLowerCase();
+
+    const cardsFiltrate = gameCards.filter(words => words.title.trim().toLowerCase().includes(inputUser)
+    );
+    createCards(cardsFiltrate);
+
+}
+
 function init() {
   container.addEventListener("click", flipCard);
+  
+  search.querySelector(".search__button").addEventListener("click", searchCards);
+  search.querySelector(".reset__button").addEventListener("click", resetCards);
+  
 }
   
 
 
 function flipCard(event) {
-
   const btn = event.target.closest("button");
   if(!btn) return;
-
   const card = btn.closest(".card");
-  
-  
   card.classList.toggle("card-is-flipped");
   
 
@@ -378,6 +390,12 @@ function getNextCards(card) {
     return `<li>${nextCard.name} (${nextCard.timeCost})</li>`;
   }).join("");
 }
+
+function resetCards() {
+  createCards(gameCards); 
+}
+
+
 
 
 
