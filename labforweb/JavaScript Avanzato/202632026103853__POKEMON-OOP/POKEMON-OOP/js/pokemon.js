@@ -53,29 +53,45 @@ class Pokemon {
   }
 
   get currentAttackPoints() {
-    return this._currentAttackPointsMax;
+    return this._currentAttackPoints;
   }
 
   set currentAttackPoints(value) {
-    this._currentAttackPointsMax = value;
+    this._currentAttackPoints = value;
   }
 
   //metodi dei pokemon
 
   attacca() {
-    return this._currentAttackPoints -= this._attackPoints;
+    if(this._currentAttackPoints < this._attackPoints) {
+      return;
+      
+    } else {
+      this._currentAttackPoints -= this._attackPoints;
+      
+      }
+
+    
+  }
+  
+  ricaricaPuntiAttacco() {
+    
+
   }
 }
 
 const rechargeAttackBtn = document.querySelector(".rigeneraMana");
 const attackBtn = rechargeAttackBtn.nextElementSibling;
 const eggContainer = document.querySelector(".eggsContainer");
+const cardContainer = document.querySelector(".cardContainer");
+const cardHistory = cardContainer.nextElementSibling;
 
 //START
+let log; 
+let currentPkm = {};
+init();
 
 
-const pk = new Pokemon("a", "a", "a", "a");
-console.log(pk.attacca());
 
 //END
 
@@ -83,7 +99,60 @@ console.log(pk.attacca());
 function init() {
   rechargeAttackBtn.addEventListener("click", rechargeAttack);
   attackBtn.addEventListener("click", attack);
-  eggContainer.addEventListener("click", generatePokemon);
+  eggContainer.addEventListener("click", initPokemon);
+  
 
 }
 
+function initPokemon(event) {
+  const imgClick = event.target.closest("img");
+  if (!imgClick) return;
+  
+
+  if (imgClick.id === "eggCharmander" ) {
+    log = "Hai generato un nuovo Charmander!";
+    alert(log);
+    generateLog(log);
+    createPokemon(new Pokemon("Charmander", "../assets/Charmander.webp", "Fuoco", "Fuocobomba"));
+    
+  } else if (imgClick.id === "eggSquirtle") {
+    log = "Hai generato un nuovo Squirtle!";
+    alert(log);
+    generateLog(log);
+    createPokemon(new Pokemon("Squirtle", "../assets/squirtle.webp", "Acqua", "Pistolacqua"));
+    
+  } else {
+    log = "Hai generato un nuovo Bulbasaur!";
+    alert(log);
+    generateLog(log);
+    createPokemon(new Pokemon("Bulbasaur", "../assets/bulbasaur.webp", "Erba", "Fendifoglia"));
+  }
+
+}
+
+function createPokemon(pokemon) {
+  currentPkm = pokemon;
+  cardContainer.innerHTML = `<div id="card${pokemon.name}">
+                                <h4>${pokemon.name}</h4>
+                                <img src="${pokemon.image}" alt="Lo sprite del pokemon ${pokemon.name}">
+                                <span>Elemento: ${pokemon.element}</span>
+                                <span>Abilita: ${pokemon.ability}</span>
+                                <span>Punti Attacco: ${pokemon.currentAttackPoints}</span>
+                              </div>`;
+
+}
+
+function attack() {
+  
+  currentPkm.attacca();
+  createPokemon(currentPkm);
+}
+
+function rechargeAttack() {
+
+}
+
+function generateLog(stringa) {
+    cardHistory.insertAdjacentHTML("beforeend", `<li>${stringa}</li>`);
+
+}
