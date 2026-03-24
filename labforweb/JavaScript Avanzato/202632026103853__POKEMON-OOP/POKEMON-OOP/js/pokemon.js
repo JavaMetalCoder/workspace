@@ -64,7 +64,7 @@ class Pokemon {
 
   attacca() {
     if(this._currentAttackPoints < this._attackPoints) {
-      return;
+      return null;
       
     } else {
       this._currentAttackPoints -= this._attackPoints;
@@ -75,7 +75,11 @@ class Pokemon {
   }
   
   ricaricaPuntiAttacco() {
-    
+    if(this._currentAttackPoints === this.attackPointsMax ) {
+      return null;
+    } else {
+      this._currentAttackPoints = this._attackPointsMax;
+    }
 
   }
 }
@@ -88,7 +92,7 @@ const cardHistory = cardContainer.nextElementSibling;
 
 //START
 let log; 
-let currentPkm = {};
+let currentPkm = null;
 init();
 
 
@@ -132,27 +136,56 @@ function initPokemon(event) {
 
 function createPokemon(pokemon) {
   currentPkm = pokemon;
-  cardContainer.innerHTML = `<div id="card${pokemon.name}">
+  cardContainer.innerHTML = `<div class="card" id="${pokemon.name.toLowerCase()}Card">
                                 <h4>${pokemon.name}</h4>
-                                <img src="${pokemon.image}" alt="Lo sprite del pokemon ${pokemon.name}">
+                                <img id="${pokemon.name.toLowerCase()}Img" src="${pokemon.image}" alt="Lo sprite del pokemon ${pokemon.name}">
                                 <span>Elemento: ${pokemon.element}</span>
                                 <span>Abilita: ${pokemon.ability}</span>
-                                <span>Punti Attacco: ${pokemon.currentAttackPoints}</span>
+                                <span id="attackPoints">Punti Attacco: ${pokemon.currentAttackPoints}</span>
                               </div>`;
 
 }
 
 function attack() {
-  
-  currentPkm.attacca();
-  createPokemon(currentPkm);
+  if(!currentPkm) {
+    alert("Prima devi generare un Pokemon!!");
+    return;
+  }
+     
+  const isNull = currentPkm.attacca();
+  if(isNull === null) {
+    alert("Punti Attacco Insufficienti!");
+    return;
+  }
+  cardContainer.querySelector("#attackPoints").textContent = `Punti Attacco: ${currentPkm.currentAttackPoints}`; 
+
+  log = `${currentPkm.name} usa ${currentPkm.ability}!`;
+  alert(log);
+  generateLog(log);
+
 }
 
 function rechargeAttack() {
+  if(!currentPkm) {
+    alert("Prima devi generare un Pokemon!!");
+    return;
+  }
+  const checkAP = currentPkm.ricaricaPuntiAttacco();
+  if(checkAP === null) {
+    alert("Punti Attacco ancora disponibili!!");
+    return;
+  }
+  
+  cardContainer.querySelector("#attackPoints").textContent = `Punti Attacco: ${currentPkm.currentAttackPoints}`; 
+  log = "Punti Attacco ricaricati!!";
+  alert(log);
+  generateLog(log);
+
+
 
 }
 
 function generateLog(stringa) {
-    cardHistory.insertAdjacentHTML("beforeend", `<li>${stringa}</li>`);
+    cardHistory.insertAdjacentHTML("beforeend", `<li style="list-style: none">${stringa}</li>`);
 
 }
