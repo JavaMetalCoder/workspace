@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.2rem;
+}
+
+.h-title {
+  margin: 20px;
+  background-color: blueviolet;
+  border-radius: 10px;
+}
+
+.h-title span {
+  display: inline-block;
+  padding: 10px;
+  width: 100vw;
+  
+}
+
+.container {
+  width: 90vw;
+  margin: 17px auto;
+}
+
+.container .card-alien {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+
+}
+
+.card-alien .img-container {
+  height: 400px;
+  background-color: aqua;
+  border-radius: 10px;
+}
+
+.card-alien .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+}
+
+#card-input {
+  margin-top: 10px;
+  padding: 6px;
+  border-radius: 5px;
+  border: solid 2px #000;
+  outline: none;
+  transition: .9s;
+
+}
+
+#card-input:focus {
+  border: solid 2px blue;
+}
+
+.card-btns {
+  max-width: 70%;
+  display: flex;
+  gap:10px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  
+}
+
+#card-btns-submit {
+  flex: 2;
+  
+}
+#card-btns-plus {
+  flex: 1;
+}
+
+#card-btns-minus {
+  flex: 1;
+}
+
+/* Media Query */
+@media screen and (min-width: 1000px){
+  body {
+    font-size: 1.6rem;
+  }
+  .card-alien #card-title {
+    text-align: center;
+  }
+  .card-alien .img-container {
+    width: 80%;
+    margin: 10px auto;
+  }
+  #card-input {
+    width: 80%;
+    margin: 10px auto;
+    
+  }
+  
+}
