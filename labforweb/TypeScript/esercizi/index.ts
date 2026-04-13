@@ -21,3 +21,24 @@ function mostraLibro(libro: Libro): void {
 }
 
 mostraLibro(libro1);
+
+
+
+
+//GENERICS
+
+
+function getLast<T>(arr: T[]): T {
+  return arr[arr.length-1];
+}
+
+//UNION TYPES
+
+type ID = string | number;
+
+let porco: ID;
+
+porco = "ciao";
+porco = 2;
+//porco = true; errore!!
+

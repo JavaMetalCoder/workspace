@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<main class="container">
+  <section class="row">
+
+    @for (corso of listaCorsi; track corso.titolo) {
+      <!--@if (corso.prezzo < 5000) { -->
+        <div class="col-6">
+        <app-card-corsi [corso]="corso"></app-card-corsi>
+      </div>
+      <!--} @else {
+        <p class="col-6">Questo corso costa di piu</p>
+      }
+      
+    } @empty {
+      <p>Lista vuota</p> -->
+    }
+
+  </section>
+</main>
