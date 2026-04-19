@@ -1,0 +1,14 @@
+
+
+<ol class="list-group list-group-numbered">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div><strong>Tipologia: {{prenotatiList().tipologia}} </strong> </div>
+      <p>{{prenotatiList().descrizione}}</p>
+    </div>
+    <button type="button" class="cursor" (click)="removeStanza(prenotatiList())">Rimuovi Prenotazione</button>
+  </li>
+  
+</ol>
+
+

@@ -1,0 +1,27 @@
+<div class="container center">
+  
+  @for (s of stanzeCorrenti; track s.id) {
+
+    <app-card-stanza 
+      [stanza]="s" 
+      [isBooked]="stanzePrenotate.includes(s)"
+      (OnStanzePrenotate)="setStanzePrenotate($event)">
+    </app-card-stanza>
+
+  } @empty {
+    <p>Nessuna stanza disponibile!</p>
+  }
+
+  <h3 class="mt-3 mb-3">Stanze Prenotate:</h3>
+
+  @for (p of stanzePrenotate; track p.id) {
+    <app-lista-prenotati [prenotatiList]="p" (OnRemoveStanzaPrenotata)="removeStanzaPrenotata($event)"></app-lista-prenotati>
+  }
+
+  
+  
+
+  <h5>Incasso: ${{ sommaPrezzo() }}</h5>
+  
+
+</div>
