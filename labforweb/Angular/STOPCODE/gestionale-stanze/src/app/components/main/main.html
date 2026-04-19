@@ -16,6 +16,8 @@
 
   @for (p of stanzePrenotate; track p.id) {
     <app-lista-prenotati [prenotatiList]="p" (OnRemoveStanzaPrenotata)="removeStanzaPrenotata($event)"></app-lista-prenotati>
+  } @empty {
+    <div class="alert alert-warning">Nessuna stanza prenotata ancora!</div>
   }
 
   
