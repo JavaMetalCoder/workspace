@@ -1,0 +1,17 @@
+<div class="container center mt-5">
+  @for (turno of turni; track turno.id) {
+    <div class="col-12 col-md-6 col-lg-4">
+      <app-list-turni 
+      [turno]="turno"
+      (OnRemoveTurno)="rmTurno($event)"
+      ></app-list-turni>
+
+    </div>
+
+} @empty {
+  <p>Nessun turno</p>
+}
+
+</div>
+
+
