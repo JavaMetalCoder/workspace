@@ -13,8 +13,7 @@ export class ListTurni {
   
   onRemove = output<number>(); 
 
-  // Questa funzione ora non serve più che riceva l'id dall'HTML, 
-  // lo prende direttamente dal segnale input 'turno'
+  
   handleRemove() {
     this.onRemove.emit(this.turno().id);
   }

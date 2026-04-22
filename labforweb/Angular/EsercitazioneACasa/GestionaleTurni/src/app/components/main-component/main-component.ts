@@ -18,6 +18,8 @@ export class MainComponent {
 
   rmTurno(id: number) {
     this.turniService.removeTurno(id);
+    console.log(this.turni);
+    this.turni = this.turniService.getTurni();
   }
   
 
