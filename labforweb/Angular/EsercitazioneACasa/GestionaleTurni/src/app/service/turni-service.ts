@@ -1,53 +1,54 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Turno } from '../types/turno';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TurniService {
-  private turniList: Turno[] = [
+  private turniList = signal<Turno[]>([
   {
     id: 1,
     nomeReparto: "Pronto Soccorso",
     operatore: "Mario Rossi",
     tipo: "Mattina",
-    data: new Date('2023-10-27')
+    data: new Date(2023, 9, 27)
   },
   {
     id: 2,
     nomeReparto: "Cardiologia",
     operatore: "Luigi Bianchi",
     tipo: "Pomeriggio",
-    data: new Date('2023-10-27')
+    data: new Date(2023, 9, 27)
   },
   {
     id: 3,
     nomeReparto: "Pediatria",
     operatore: "Anna Verdi",
     tipo: "Notte",
-    data: new Date('2023-10-28')
+    data: new Date(2023, 9, 28)
   }
-];
+]);
 
   
 
-  getTurni(): Turno[] {
-    return [...this.turniList];
+  getTurni() {
+    return this.turniList.asReadonly();
   }
 
   addTurno(turno: Turno): void {
-    this.turniList.push(turno);
+    this.turniList.update(turni => [...turni, turno]);
   }
 
   removeTurno(id: number): void {
-    const index = this.turniList.findIndex(t => t.id === id);
-
-    if (index !== -1) {
-    this.turniList.splice(index, 1);
-    console.log("Turno rimosso. Nuova lista:", this.turniList);
-    } else {
-    console.warn("Turno non trovato con ID:", id);
-  }
+    this.turniList.update(turni => {
+      const turniAggiornati = turni.filter(t => t.id !== id);
+      if (turni.length === turniAggiornati.length) {
+        console.warn(`Turno non trovato con ID: ${id}`);
+      } else {
+        console.log("Turno rimosso. Nuova lista:", turniAggiornati);
+      }
+      return turniAggiornati;
+    });
 }
 
 }

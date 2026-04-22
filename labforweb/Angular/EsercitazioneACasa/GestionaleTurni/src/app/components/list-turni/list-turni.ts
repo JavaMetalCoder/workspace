@@ -1,10 +1,11 @@
-import { Component, inject, input, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Turno } from '../../types/turno';
-import { TurniService } from '../../service/turni-service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-list-turni',
-  imports: [],
+  standalone: true,
+  imports: [DatePipe],
   templateUrl: './list-turni.html',
   styleUrl: './list-turni.css',
 })

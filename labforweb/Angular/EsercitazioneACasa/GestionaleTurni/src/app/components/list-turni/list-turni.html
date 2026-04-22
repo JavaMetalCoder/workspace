@@ -1,8 +1,11 @@
-<div class="card">
-  <h2>Turno di {{turno().operatore}}</h2>
-  <p>Reparto: {{turno().nomeReparto}}</p>
-  <p>Data: {{turno().data}}</p>
-  <p>Tipologia: {{turno().tipo}}</p>
-  <button type="button" (click)="handleRemove()">Elimina turno</button>
-
+<div class="card h-100">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">{{ turno().nomeReparto }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ turno().operatore }}</h6>
+    <p class="card-text">
+      Tipo: {{ turno().tipo }}<br>
+      Data: {{ turno().data | date: 'dd/MM/yyyy' }}
+    </p>
+    <button class="btn btn-danger btn-sm mt-auto" (click)="handleRemove()">Rimuovi</button>
+  </div>
 </div>
