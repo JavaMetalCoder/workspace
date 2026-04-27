@@ -1,7 +1,7 @@
 <div class="d-flex gap-2 justify-content-center">
   <input type="text" placeholder="Inserisci la parola"
-  [(ngModel)]="text">
+  [(ngModel)]="word.parola">
   <input type="text" placeholder="Inserisci il significato"
-  [(ngModel)]="textSign">
-  <button type="button" class="btn btn-info">Aggiungi</button>
+  [(ngModel)]="word.significato">
+  <button type="button" class="btn btn-info" (click)="onAddWordBtn()">Aggiungi</button>
 </div>

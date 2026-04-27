@@ -2,8 +2,8 @@
 
 <main class="container-fluid">
   <div class="col-6">
-    <app-add-word-form></app-add-word-form>
-    <app-reset-word></app-reset-word>
+    <app-add-word-form (onAddWord)="onAddWord($event)"></app-add-word-form>
+    <app-reset-word (onResetEvent)="onReset()"></app-reset-word>
   </div>
 
   <div class="col-6">
