@@ -17,11 +17,6 @@ export class InputService {
     this.checkWord(word);
     if (word.isFormValid === true && !this.isJustAddedWord(word)) {
       this.wordList.update((prev: WordList) => [...prev, { ...word }]);
-      word = {
-        parola: "",
-        significato: "",
-        isFormValid: false
-      };
     } else {
       if(this.isJustAddedWord(word)) {
         alert('Parola già inserita!');

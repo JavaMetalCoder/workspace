@@ -1,6 +1,0 @@
-interface IProduct {
-  id: number;
-  name: string;
-  price: number,
-  isAvailable: boolean;
-}

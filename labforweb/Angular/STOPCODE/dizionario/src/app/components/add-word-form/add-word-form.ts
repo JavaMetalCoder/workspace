@@ -22,6 +22,11 @@ export class AddWordForm {
   onAddWordBtn() {
     this.onAddWord.emit(this.word);
     
-    
+  
+    this.word = {
+      parola: "",
+      significato: "",
+      isFormValid: false
+    };
   }
 }
