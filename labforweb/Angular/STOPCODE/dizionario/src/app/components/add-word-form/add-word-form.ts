@@ -1,4 +1,4 @@
-import { Component, inject, output } from '@angular/core';
+import { Component, inject, output, signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Word } from '../../types/word';
 import { InputService } from '../../service/input-service';
@@ -10,16 +10,18 @@ import { InputService } from '../../service/input-service';
   styleUrl: './add-word-form.css',
 })
 export class AddWordForm {
-
-  
-  protected word = {
+  protected word: Word = {
     parola: "",
-    significato: ""
+    significato: "",
+    isFormValid: false
   }
   
+  //data-binding
   onAddWord = output<Word>();
 
   onAddWordBtn() {
     this.onAddWord.emit(this.word);
+    
+    
   }
 }

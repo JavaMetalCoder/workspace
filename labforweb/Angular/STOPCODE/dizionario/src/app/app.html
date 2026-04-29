@@ -1,14 +1,27 @@
 <app-header></app-header>
 
 <main class="container-fluid">
-  <div class="col-6">
+  <div class="col-12">
     <app-add-word-form (onAddWord)="onAddWord($event)"></app-add-word-form>
-    <app-reset-word (onResetEvent)="onReset()"></app-reset-word>
+    <app-reset-word
+    (onResetEvent)="onReset()"
+    (onSearchEvent)="onSearch($event)"
+    ></app-reset-word>
   </div>
 
-  <div class="col-6">
-    <app-list-words></app-list-words>
-  </div>
+  <section class="container py-4">
+    <h1 class="h4 mb-3">Dizionario</h1>
+    <dl class="list-group">
+
+      @for (word of filteredWordList(); track $index) {
+        <app-list-words [parolaList]="word"></app-list-words>
+      } @empty {
+        <div class="list-group-item text-muted">
+          <p>Nessuna parola disponibile.</p>
+        </div>
+      }
+    </dl>
+  </section>
 
 </main>
 

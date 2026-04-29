@@ -1,4 +1,4 @@
-<div class="flex-row">
-  <input type="text" placeholder="Inserisci parola" [(ngModel)]="wordSearch">
-  <button type="button" (click)="onClickReset()">Reset</button>
+<div class="d-flex gap-2 justify-content-center mt-5">
+  <input type="text" placeholder="Inserisci parola" [(ngModel)]="wordSearch" (input)="onInputSearch()">
+  <button type="button" class="btn btn-outline-info" (click)="onClickReset()">Reset</button>
 </div>

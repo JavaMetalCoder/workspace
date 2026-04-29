@@ -13,10 +13,16 @@ export class ResetWord {
   wordSearch: string = '';
 
   onResetEvent = output<string>();
+  onSearchEvent = output<string>();
 
   onClickReset() {
     this.onResetEvent.emit(this.wordSearch);
   }
+
+  onInputSearch() {
+    this.onSearchEvent.emit(this.wordSearch);
+  }
+
 
   
 }
