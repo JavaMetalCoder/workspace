@@ -1,0 +1,32 @@
+[
+  {
+    "id": "task-001",
+    "title": "Preparare report settimanale",
+    "description": "Raccogliere lo stato delle attivita completate e inviare il riepilogo al team.",
+    "urgency": "medium"
+  },
+  {
+    "id": "task-002",
+    "title": "Correggere errore login",
+    "description": "Analizzare il problema segnalato dagli utenti durante l'accesso e pubblicare una correzione.",
+    "urgency": "high"
+  },
+  {
+    "id": "task-003",
+    "title": "Aggiornare documentazione",
+    "description": "Integrare le nuove istruzioni operative nella guida interna del progetto.",
+    "urgency": "low"
+  },
+  {
+    "id": "task-004",
+    "title": "Verificare scadenze cliente",
+    "description": "Controllare le prossime consegne e aggiornare le priorita nel gestionale.",
+    "urgency": "high"
+  },
+  {
+    "id": "task-005",
+    "title": "Pianificare riunione tecnica",
+    "description": "Definire agenda, partecipanti e obiettivi per il prossimo confronto sullo sviluppo.",
+    "urgency": "medium"
+  }
+]

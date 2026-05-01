@@ -1,0 +1,19 @@
+<section>
+  <h2 class="mb-3">Task Disponibili: </h2>
+
+  @for (task of tasks(); track task.id) {
+    <ul class="list-group mb-2">
+      <app-task [task]="task"
+                (taskRemoved)="removeTaskEvent($event)"
+      ></app-task>
+    </ul>
+      
+  } @empty {
+    <p class="mb-2">Non ci sono tasks presenti!</p>
+  }
+
+  <button class="btn btn-secondary mt-3" type="button" role="button"
+  [routerLink]="['/aggiungi']"
+  >Aggiungi Nuovo Task</button>
+  
+</section>

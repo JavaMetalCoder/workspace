@@ -47,7 +47,7 @@ export class InputService {
 
   isJustAddedWord(word: Word): boolean {
     
-    return this.wordList().some(w => w.parola.toLowerCase() === word.parola.toLowerCase());
+    return this.wordList().some((w: Word) => w.parola.toLowerCase() === word.parola.toLowerCase());
   }
 
   filteredWordList = computed(() => {
