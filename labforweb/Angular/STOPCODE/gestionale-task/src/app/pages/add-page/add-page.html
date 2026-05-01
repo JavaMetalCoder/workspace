@@ -1,30 +1,65 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
+      <button [routerLink]="['']" routerLinkActive="active" 
+      class="btn btn-primary" type="button">Torna alla Home</button>
       <h1 class="mb-4">Aggiungi Task: </h1>
-      <form #addTask="ngForm">
+      <form #addTask="ngForm" (ngSubmit)="onSubmit(addTask)">
         <div class="mb-3">
           <label for="taskTitle" class="form-label">Titolo Task</label>
-          <input type="text" class="form-control" id="taskTitle" placeholder="Inserisci il titolo del task" required>
+          <input type="text"
+           class="form-control" id="taskTitle"
+           placeholder="Inserisci il titolo del task" 
+           required
+           name="title"
+           ngModel
+           #title="ngModel">
+
+           @if (title.invalid && title.touched) {
+            <p class="error-message">Titolo Obbligatorio</p>
+           }
         </div>
         <div class="mb-3">
           <label for="taskDescription" class="form-label">Descrizione</label>
-          <textarea class="form-control" id="taskDescription" rows="4" placeholder="Inserisci la descrizione del task"></textarea>
+          <textarea 
+          class="form-control" id="taskDescription" 
+          rows="4" 
+          placeholder="Inserisci la descrizione del task"
+          ngModel
+          required
+          name="descrizione"
+          #descr="ngModel"></textarea>
+
+          @if (descr.invalid && descr.touched) {
+            <p class="error-message">La Descrizione è obbligatoria</p>
+          }
         </div>
         <div class="mb-3">
           <label for="taskPriority" class="form-label">Priorità</label>
-          <select class="form-select" id="taskPriority">
-            <option value="">Seleziona priorità</option>
+          <select class="form-select" id="taskPriority"
+          required
+          ngModel
+          name="urgency"
+          #urgency="ngModel">
+            <option value="" disabled selected>Seleziona priorità</option>
             <option value="bassa">Bassa</option>
             <option value="media">Media</option>
             <option value="alta">Alta</option>
           </select>
+
+          @if (urgency.invalid && urgency.touched) {
+            <p class="error-message">Seleziona una urgenza</p>
+          }
         </div>
         
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button type="submit" class="btn btn-primary">Aggiungi Task</button>
+          <button type="submit" class="btn btn-primary"
+          [disabled]="addTask.invalid">Aggiungi Task</button>
           <button type="reset" class="btn btn-secondary">Annulla</button>
         </div>
+        @if (successMessage()) {
+          <p class="success-message mt-5">{{successMessage()}}</p>
+        }
       </form>
     </div>
   </div>
