@@ -17,3 +17,24 @@ button:disabled {
   font-weight: 600;
   margin-bottom: 1rem;
 }
+
+.error-message-id {
+  padding: 0.75rem 1rem;
+  margin-top: 20vh;
+  border-radius: 0.75rem;
+  color: #b82424;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.low {
+  color: #008000;
+}
+.medium {
+  color: #ffac11;
+}
+.high {
+  color: #ff0000;
+}

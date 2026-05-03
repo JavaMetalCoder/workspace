@@ -14,14 +14,14 @@ import { RouterLink } from "@angular/router";
 export class AddPage {
   private taskService = inject(TaskService);
 
-  successMessage = signal<string | null>(null);
+  protected successMessage = signal<string | null>(null);
   
   onSubmit(form: NgForm): void {
     if(form.invalid) {
       return;
     }
-    const valueTask: ITask = form.value;
-    this.taskService.addTasks(valueTask);
+    
+    this.taskService.addTask(form.value);
     
     this.showSuccessMessage('Task aggiunto correttamente :)');
     

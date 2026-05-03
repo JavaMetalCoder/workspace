@@ -1,1 +1,11 @@
-<p>details-page works!</p>
+<button class="btn btn-primary m-3" type="button" [routerLink]="['']" routerLinkActive="active">Torna alla Home</button>
+@if(task) {
+  <section class="container d-flex flex-column justify-content-around align-items-center gap-2 m-4 p-2">
+    <h3>{{task.title}}</h3>
+    <p>{{task.description}}</p>
+    <strong [class]="task.urgency">{{task.urgency.toUpperCase()}}</strong>
+  </section>
+
+} @else {
+  <p class="error-message-id">Task non trovato :(</p>
+}

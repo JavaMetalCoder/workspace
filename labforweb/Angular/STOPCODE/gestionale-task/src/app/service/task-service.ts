@@ -27,17 +27,22 @@ export class TaskService {
     return this._tasks.asReadonly();
   }
 
-  public setTasks(newValue: ITask[]) {
-    this._tasks.set(newValue);
-  }
-
-  public addTasks(newValue: ITask) {
-    this._tasks.update(prev => [...prev, newValue])
+ 
+  public addTask(taskForm: Omit<ITask,'id'>) {
+    const newTask: ITask = {
+      ...taskForm, 
+      id: crypto.randomUUID()
+    };
+    this._tasks.update(prev => [...prev, newTask ]) 
   }
 
   public removeTask(id: string) {
     this._tasks.update(tasks => tasks.filter(task => task.id !== id));
     console.log(id)
+  }
+
+  public getTaskByID(id: string): ITask | undefined {
+    return this._tasks().find(task => task.id === id);
   }
   
 }

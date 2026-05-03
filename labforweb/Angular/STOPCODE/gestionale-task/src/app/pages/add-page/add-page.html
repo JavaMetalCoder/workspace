@@ -1,8 +1,8 @@
+<button [routerLink]="['']" routerLinkActive="active" class="btn btn-primary m-3" type="button">Torna alla Home</button>
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <button [routerLink]="['']" routerLinkActive="active" 
-      class="btn btn-primary" type="button">Torna alla Home</button>
+      
       <h1 class="mb-4">Aggiungi Task: </h1>
       <form #addTask="ngForm" (ngSubmit)="onSubmit(addTask)">
         <div class="mb-3">
@@ -27,11 +27,11 @@
           placeholder="Inserisci la descrizione del task"
           ngModel
           required
-          name="descrizione"
+          name="description"
           #descr="ngModel"></textarea>
 
           @if (descr.invalid && descr.touched) {
-            <p class="error-message">La Descrizione è obbligatoria</p>
+            <p class="error-message">La descrizione è obbligatoria</p>
           }
         </div>
         <div class="mb-3">
@@ -42,9 +42,9 @@
           name="urgency"
           #urgency="ngModel">
             <option value="" disabled selected>Seleziona priorità</option>
-            <option value="bassa">Bassa</option>
-            <option value="media">Media</option>
-            <option value="alta">Alta</option>
+            <option value="low">Bassa</option>
+            <option value="medium">Media</option>
+            <option value="high">Alta</option>
           </select>
 
           @if (urgency.invalid && urgency.touched) {
